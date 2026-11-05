@@ -533,161 +533,432 @@
       </a>
     </div>
 
-    <!-- Projects Grid (3 cards) -->
+    <!-- Projects Grid (6 Real Client & SaaS Products) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
-      <!-- Project 1: E-Commerce Platform -->
+      <!-- Project 1: SchoolManagement System -->
       <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
         <!-- Mockup container -->
         <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 pointer-events-none"></div>
           <!-- Reconstructed mockup UI -->
-          <div class="w-full h-full p-4 bg-gradient-to-br from-[#0c1424] to-[#162544] flex flex-col justify-between">
-            <div class="flex items-center justify-between border-b border-slate-700/50 pb-2">
-              <span class="text-[11px] font-bold text-white tracking-wide">STOREFRONT</span>
+          <div class="w-full h-full p-4 bg-gradient-to-br from-[#0c192c] via-[#0f1f38] to-[#132847] flex flex-col justify-between select-none">
+            <div class="flex items-center justify-between border-b border-sky-500/20 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-bold text-white tracking-wide flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                  SchoolManagement
+                </span>
+                <span class="text-[9px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-medium">Academic Suite</span>
+              </div>
               <div class="flex space-x-1">
                 <span class="w-2 h-2 rounded-full bg-rose-500/80"></span>
                 <span class="w-2 h-2 rounded-full bg-amber-500/80"></span>
                 <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span>
               </div>
             </div>
-            <div class="my-auto text-left">
-              <p class="text-xs uppercase tracking-widest text-sky-400 font-semibold">Elevate Your</p>
-              <h4 class="text-base font-extrabold text-white">Online Store</h4>
-              <button class="mt-3 px-3 py-1 bg-sky-500 text-[10px] text-white font-medium rounded shadow">Shop Now</button>
+            <!-- Stats row -->
+            <div class="grid grid-cols-3 gap-2 my-auto">
+              <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                <span class="text-[9px] text-slate-400 block">Attendance</span>
+                <span class="text-xs font-bold text-emerald-400">98.4%</span>
+              </div>
+              <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                <span class="text-[9px] text-slate-400 block">Students</span>
+                <span class="text-xs font-bold text-white">1,420</span>
+              </div>
+              <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                <span class="text-[9px] text-slate-400 block">Rosters</span>
+                <span class="text-xs font-bold text-sky-400">48 Classes</span>
+              </div>
             </div>
-            <div class="grid grid-cols-3 gap-2">
-              <div class="h-6 bg-slate-800/80 rounded border border-slate-700/40"></div>
-              <div class="h-6 bg-slate-800/80 rounded border border-slate-700/40"></div>
-              <div class="h-6 bg-slate-800/80 rounded border border-slate-700/40"></div>
+            <!-- Schedule / Routines snippet -->
+            <div class="space-y-1.5">
+              <div class="h-6 bg-slate-900/70 rounded border border-slate-800/80 px-2 flex items-center justify-between text-[10px]">
+                <span class="text-slate-300 font-medium">Math & Statistics · Grade 11</span>
+                <span class="text-emerald-400 text-[9px] font-mono">In Session</span>
+              </div>
+              <div class="h-6 bg-slate-900/70 rounded border border-slate-800/80 px-2 flex items-center justify-between text-[10px]">
+                <span class="text-slate-400 font-medium">Physics Lab · Section B</span>
+                <span class="text-slate-400 text-[9px] font-mono">11:30 AM</span>
+              </div>
             </div>
           </div>
         </div>
         <!-- Project details -->
         <div class="p-6 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
-              E-Commerce Platform
-            </h3>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+                <a href="https://schoolmanagement-one-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                  SchoolManagement
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-sky-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </a>
+              </h3>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Live App</span>
+            </div>
             <p class="text-xs text-sky-400 font-semibold mt-1">
-              Shopify / React / Node.js
+              Next.js / TypeScript / Tailwind CSS / Vercel
             </p>
             <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-              Full-featured headless store featuring dynamic cart states, payment gateways, and custom inventory synchronization.
+              Connected school ERP and administration suite. Manages unified student records, daily attendance routines, grade reports, and instant family update notifications.
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
-            <a href="#contact" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1">
-              <span>Request Demo</span> →
+            <a href="https://schoolmanagement-one-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              <span>Explore Live Platform</span> →
             </a>
-            <span class="text-[11px] text-slate-500 font-mono">Live Demo</span>
+            <span class="text-[11px] text-slate-500 font-mono">schoolmanagement-one-tau.vercel.app</span>
           </div>
         </div>
       </div>
 
-      <!-- Project 2: Real Estate Website -->
+      <!-- Project 2: Invoice 4pro -->
       <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
         <!-- Mockup container -->
         <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 pointer-events-none"></div>
           <!-- Reconstructed mockup UI -->
-          <div class="w-full h-full p-4 bg-gradient-to-br from-[#121c2e] to-[#0f172a] flex flex-col justify-between">
-            <div class="flex items-center justify-between border-b border-slate-700/50 pb-2">
-              <span class="text-[11px] font-bold text-white tracking-wide">ESTATE FINDER</span>
-              <span class="text-[9px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-400 font-semibold">Search</span>
+          <div class="w-full h-full p-4 bg-gradient-to-br from-[#0f172a] via-[#111e38] to-[#0d2240] flex flex-col justify-between select-none">
+            <div class="flex items-center justify-between border-b border-indigo-500/20 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-bold text-white tracking-wide flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  Invoice 4pro
+                </span>
+                <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">#INV-2026-084</span>
+              </div>
+              <div class="flex items-center gap-1 text-[9px] text-slate-400">
+                <span class="px-1 py-0.5 rounded bg-slate-800 text-slate-300">$ / ₦ / €</span>
+              </div>
             </div>
-            <div class="my-auto text-left">
-              <h4 class="text-sm font-extrabold text-white">Find Your Dream Property</h4>
-              <p class="text-[10px] text-slate-300">Modern Residential & Commercial</p>
+            <!-- Invoice card inside mockup -->
+            <div class="bg-slate-900/90 rounded-lg p-2.5 border border-slate-700/50 my-auto space-y-1.5">
+              <div class="flex justify-between items-center text-[10px]">
+                <span class="text-slate-400">Client: Highsight Media Inc.</span>
+                <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400">PAID</span>
+              </div>
+              <div class="flex justify-between items-baseline border-b border-slate-800 pb-1">
+                <span class="text-xs font-extrabold text-white">Full-Stack Retainer</span>
+                <span class="text-sm font-black text-sky-400 font-mono">$4,850.00</span>
+              </div>
+              <div class="flex justify-between text-[9px] text-slate-400 pt-0.5">
+                <span>Tax (0% Exported): $0.00</span>
+                <span class="text-emerald-400 font-medium">Instant PDF Ready</span>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <div class="h-8 flex-1 bg-slate-800/80 rounded border border-slate-700/50 flex items-center px-2 text-[10px] text-slate-400">Search location...</div>
-              <div class="h-8 w-8 bg-sky-500 rounded flex items-center justify-center text-white text-xs">🔍</div>
+            <!-- Action bar -->
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] text-slate-400 flex items-center gap-1">
+                <span>📄</span> Free Client CRM & Billing
+              </span>
+              <span class="px-2 py-0.5 rounded bg-sky-500 text-[10px] text-white font-semibold shadow">Download PDF</span>
             </div>
           </div>
         </div>
         <!-- Project details -->
         <div class="p-6 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
-              Real Estate Portal
-            </h3>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+                <a href="https://invoice4pro.com" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                  Invoice 4pro
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-sky-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </a>
+              </h3>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Fintech SaaS</span>
+            </div>
             <p class="text-xs text-sky-400 font-semibold mt-1">
-              Next.js / Tailwind CSS / PostgreSQL
+              React / PWA / Local-First / Client-Side PDF Engine
             </p>
             <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-              Property discovery platform featuring interactive location filtering, booking schedules, and agent contact workflows.
+              Mobile-first invoice generator and professional billing software. Features multi-currency support, tax calculations, client CRM, receipts, and offline instant PDF downloads.
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
-            <a href="#contact" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1">
-              <span>Request Demo</span> →
+            <a href="https://invoice4pro.com" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              <span>Open Invoice 4pro</span> →
             </a>
-            <span class="text-[11px] text-slate-500 font-mono">Case Study</span>
+            <span class="text-[11px] text-slate-500 font-mono">invoice4pro.com</span>
           </div>
         </div>
       </div>
 
-      <!-- Project 3: Business Analytics Dashboard -->
+      <!-- Project 3: SyncAttendance -->
       <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
         <!-- Mockup container -->
         <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 pointer-events-none"></div>
           <!-- Reconstructed mockup UI -->
-          <div class="w-full h-full p-3.5 bg-slate-900 flex space-x-2.5">
-            <!-- Sidebar -->
-            <div class="w-12 bg-slate-950/70 rounded p-1.5 flex flex-col space-y-2 border border-slate-800">
-              <div class="w-4 h-4 rounded bg-sky-500 mx-auto"></div>
-              <div class="w-full h-1 bg-slate-800 rounded"></div>
-              <div class="w-full h-1 bg-slate-800 rounded"></div>
-              <div class="w-full h-1 bg-slate-800 rounded"></div>
+          <div class="w-full h-full p-4 bg-gradient-to-br from-[#0a1826] via-[#0f243a] to-[#12314e] flex flex-col justify-between select-none">
+            <div class="flex items-center justify-between border-b border-teal-500/20 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-bold text-white tracking-wide flex items-center gap-1.5">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  SyncAttendance
+                </span>
+                <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-medium">Session Active</span>
+              </div>
+              <div class="flex space-x-1">
+                <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+                <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+                <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+              </div>
             </div>
-            <!-- Main dashboard content -->
-            <div class="flex-1 flex flex-col justify-between bg-slate-800/40 rounded p-2 border border-slate-800/60">
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] font-bold text-white">Analytics Overview</span>
-                <span class="w-4 h-4 rounded-full bg-sky-500 flex items-center justify-center text-[8px] text-white">~</span>
+            <!-- Live Attendance Counter -->
+            <div class="bg-slate-900/90 rounded-lg p-2.5 border border-slate-800 my-auto">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[10px] text-slate-400">Live Participant Check-In</span>
+                <span class="text-xs font-mono font-bold text-emerald-400">142 / 150</span>
               </div>
-              <!-- Bar chart placeholder -->
-              <div class="flex items-end space-x-1.5 h-14 pt-2">
-                <div class="w-2.5 h-6 bg-sky-400 rounded-t"></div>
-                <div class="w-2.5 h-10 bg-sky-500 rounded-t"></div>
-                <div class="w-2.5 h-4 bg-sky-600 rounded-t"></div>
-                <div class="w-2.5 h-9 bg-emerald-400 rounded-t"></div>
-                <div class="w-2.5 h-12 bg-sky-400 rounded-t"></div>
-                <div class="w-2.5 h-7 bg-indigo-400 rounded-t"></div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-[94.6%] h-full bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full"></div>
               </div>
-              <!-- Mini stats -->
-              <div class="grid grid-cols-2 gap-1 pt-1 text-[8px] text-slate-300">
-                <div class="bg-slate-900/60 p-1 rounded font-medium text-emerald-400">+24.5% Growth</div>
-                <div class="bg-slate-900/60 p-1 rounded font-medium">1.2k Active</div>
+              <div class="flex justify-between text-[9px] text-slate-400 mt-2">
+                <span class="flex items-center gap-1 text-teal-300">🔗 syncattendance.online/c/89x</span>
+                <span class="text-slate-400">QR Code Valid</span>
               </div>
+            </div>
+            <!-- Check-in log ticker -->
+            <div class="flex items-center justify-between text-[10px] bg-slate-950/60 px-2 py-1.5 rounded border border-slate-800">
+              <span class="text-slate-300 truncate">Last verified sign-in: <strong class="text-white">A. Timothy</strong></span>
+              <span class="text-[9px] text-slate-400 font-mono shrink-0">Just now</span>
             </div>
           </div>
         </div>
         <!-- Project details -->
         <div class="p-6 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
-              Business Dashboard
-            </h3>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+                <a href="https://syncattendance.online" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                  SyncAttendance
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-sky-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </a>
+              </h3>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">Real-Time App</span>
+            </div>
             <p class="text-xs text-sky-400 font-semibold mt-1">
-              Vue.js / Laravel / MySQL
+              Cloud / Real-Time Sync / QR Check-in / PDF Export
             </p>
             <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-              High-throughput data visualization dashboard with live revenue metrics, transaction logs, and customer telemetry.
+              Real-time attendance tracker and event check-in platform. Generates shareable verification links, collects instant verified sign-ins, and exports comprehensive audit reports to PDF.
             </p>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
-            <a href="#contact" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1">
-              <span>Request Demo</span> →
+            <a href="https://syncattendance.online" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              <span>Launch SyncAttendance</span> →
             </a>
-            <span class="text-[11px] text-slate-500 font-mono">Enterprise</span>
+            <span class="text-[11px] text-slate-500 font-mono">syncattendance.online</span>
           </div>
         </div>
       </div>
 
-    </div>
+      <!-- Project 4: Campally -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
+        <!-- Mockup container -->
+        <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+          <!-- Reconstructed mockup UI -->
+          <div class="w-full h-full p-4 bg-gradient-to-br from-[#1b172a] via-[#211a3b] to-[#2a1c4a] flex flex-col justify-between select-none">
+            <div class="flex items-center justify-between border-b border-purple-500/20 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-bold text-white tracking-wide flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                  Campally
+                </span>
+                <span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-medium">Campus Hub</span>
+              </div>
+              <span class="text-[9px] text-slate-400 font-mono">Safe P2P Trade</span>
+            </div>
+            <!-- Marketplace feed snippet -->
+            <div class="grid grid-cols-2 gap-2 my-auto">
+              <div class="bg-slate-900/90 p-2 rounded-lg border border-purple-900/40 space-y-1">
+                <span class="text-[9px] font-semibold text-purple-300 block">📚 Academic Essentials</span>
+                <div class="text-[10px] font-bold text-white truncate">Engineering Textbooks</div>
+                <div class="text-[9px] text-emerald-400 font-mono">₦4,500 · Hall 3 Pickup</div>
+              </div>
+              <div class="bg-slate-900/90 p-2 rounded-lg border border-purple-900/40 space-y-1">
+                <span class="text-[9px] font-semibold text-sky-300 block">💻 Gadgets & Power</span>
+                <div class="text-[10px] font-bold text-white truncate">Rechargeable Study Lamp</div>
+                <div class="text-[9px] text-emerald-400 font-mono">₦3,200 · Verified</div>
+              </div>
+            </div>
+            <!-- Bottom campus badge -->
+            <div class="flex items-center justify-between text-[10px] bg-slate-950/70 px-2 py-1 rounded border border-purple-900/30">
+              <span class="text-slate-300">🎓 Connecting University Campuses</span>
+              <span class="text-purple-400 text-[9px] font-semibold">Join Hub</span>
+            </div>
+          </div>
+        </div>
+        <!-- Project details -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+                <a href="https://campally.online" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                  Campally
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-sky-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </a>
+              </h3>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Marketplace</span>
+            </div>
+            <p class="text-xs text-sky-400 font-semibold mt-1">
+              Full Stack / Mobile P2P / Django / Geo-Commerce
+            </p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Student-first peer-to-peer campus marketplace. Allows university students to securely buy, sell, and swap textbooks, electronics, room gear, and peer services within trusted campus networks.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="https://campally.online" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              <span>Explore Campally</span> →
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">campally.online</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Klayton Electric -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
+        <!-- Mockup container -->
+        <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+          <!-- Reconstructed mockup UI -->
+          <div class="w-full h-full p-4 bg-gradient-to-br from-[#12110c] via-[#1c1911] to-[#262113] flex flex-col justify-between select-none">
+            <div class="flex items-center justify-between border-b border-amber-500/20 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-bold text-white tracking-wide flex items-center gap-1.5 font-mono">
+                  <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                  KLAYTON ELECTRIC
+                </span>
+                <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-medium">Solar Array</span>
+              </div>
+              <span class="text-[10px] text-amber-400 font-bold font-mono">8.4 kW</span>
+            </div>
+            <!-- Telemetry & Energy stats -->
+            <div class="bg-black/60 rounded-lg p-2.5 border border-amber-500/20 my-auto space-y-1.5">
+              <div class="flex justify-between items-center text-[10px]">
+                <span class="text-slate-300 font-medium">Lithium Storage Status</span>
+                <span class="text-emerald-400 font-bold font-mono">94% Charged</span>
+              </div>
+              <!-- Simulated power curve bar -->
+              <div class="flex items-end space-x-1.5 h-10 pt-1">
+                <div class="w-full h-3 bg-amber-500/30 rounded-t"></div>
+                <div class="w-full h-5 bg-amber-500/50 rounded-t"></div>
+                <div class="w-full h-8 bg-amber-500/70 rounded-t"></div>
+                <div class="w-full h-10 bg-amber-400 rounded-t"></div>
+                <div class="w-full h-9 bg-amber-400 rounded-t"></div>
+                <div class="w-full h-7 bg-amber-500/70 rounded-t"></div>
+                <div class="w-full h-4 bg-amber-500/40 rounded-t"></div>
+              </div>
+              <div class="flex justify-between text-[9px] text-slate-400 pt-0.5">
+                <span>Intelligent Grid Distribution</span>
+                <span class="text-amber-300 font-mono">0.0 ms Switch</span>
+              </div>
+            </div>
+            <!-- Bottom feature badge -->
+            <div class="flex items-center justify-between text-[10px] text-slate-300">
+              <span class="truncate">Cinematic Home Solar Engineering</span>
+              <span class="text-amber-400 font-semibold shrink-0">Ikeja, Lagos</span>
+            </div>
+          </div>
+        </div>
+        <!-- Project details -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+                <a href="https://klaytonelectric.com" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                  Klayton Electric
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-amber-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </a>
+              </h3>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Clean Energy</span>
+            </div>
+            <p class="text-xs text-amber-400 font-semibold mt-1">
+              Tailwind CSS / Space Grotesk / Interactive Engineering
+            </p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Cinematic web platform for a premier solar engineering enterprise. Showcases intelligent power distribution systems, high-capacity lithium battery storage, and turnkey renewable setups.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="https://klaytonelectric.com" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white hover:text-amber-400 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              <span>View Klayton Electric</span> →
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">klaytonelectric.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: Jumo -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-rose-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
+        <!-- Mockup container -->
+        <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+          <!-- Reconstructed mockup UI -->
+          <div class="w-full h-full p-4 bg-gradient-to-br from-[#180e14] via-[#24131d] to-[#301625] flex flex-col justify-between select-none">
+            <div class="flex items-center justify-between border-b border-rose-500/20 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-bold text-white tracking-widest uppercase">
+                  J U M O
+                </span>
+                <span class="text-[9px] px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 font-medium">Haute Couture</span>
+              </div>
+              <div class="flex items-center gap-2 text-[10px] text-slate-300">
+                <span>🛍️ Bag (0)</span>
+              </div>
+            </div>
+            <!-- Lookbook & Custom tailoring snippet -->
+            <div class="bg-black/60 rounded-lg p-2.5 border border-rose-900/40 my-auto space-y-1.5">
+              <div class="flex justify-between items-center text-[10px]">
+                <span class="text-rose-300 uppercase tracking-wider text-[9px] font-semibold">New Season Editorial</span>
+                <span class="text-[9px] text-slate-400">Atelier Line</span>
+              </div>
+              <h4 class="text-sm font-extrabold text-white tracking-tight">Luxury Bespoke & Custom Outfits</h4>
+              <div class="flex items-center justify-between text-[9px] pt-1 border-t border-slate-800">
+                <span class="text-emerald-400 flex items-center gap-1">● WhatsApp Direct Ordering</span>
+                <span class="text-slate-400">Global Shipping</span>
+              </div>
+            </div>
+            <!-- Bottom feature badge -->
+            <div class="flex items-center justify-between text-[10px] bg-slate-950/70 px-2 py-1 rounded border border-rose-900/30">
+              <span class="text-slate-300">Personalized Styling Consultation</span>
+              <span class="text-rose-400 text-[9px] font-semibold">Explore Line</span>
+            </div>
+          </div>
+        </div>
+        <!-- Project details -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
+                <a href="https://jumo.ng" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                  Jumo
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-rose-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </a>
+              </h3>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">E-Commerce</span>
+            </div>
+            <p class="text-xs text-sky-400 font-semibold mt-1">
+              React / Tailwind CSS / Framer Motion / E-Commerce
+            </p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Luxury fashion and bespoke apparel storefront. Features immersive lookbook presentations, custom tailored outfit requests, interactive catalog browsing, and WhatsApp customer service.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="https://jumo.ng" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white hover:text-rose-400 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              <span>Visit Jumo Store</span> →
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">jumo.ng</span>
+          </div>
+        </div>
+      </div>    </div>
   </section>
 
   <!-- ===================== SKYLINE CTA BANNER ===================== -->
