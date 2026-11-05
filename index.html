@@ -1,664 +1,974 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HighSight Studio — Oyewole Timileyin Timothy | Photographer &amp; Picture Editor</title>
-  <meta name="description" content="HighSight Studio by Oyewole Timileyin Timothy — Over 8 years of experience in photography, media production, and delivering high-quality visual content." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Highsight Concept — Timilehin Timothy | Full Stack Developer</title>
+  <meta name="description" content="Timilehin Timothy — Full Stack Developer & Founder of Highsight Concept. Specializing in high-performance web applications, responsive design, and scalable digital solutions." />
+  <meta name="author" content="Timilehin Timothy" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN with forms and container queries -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              accent: '#1877F2'
+            },
+            dark: {
+              950: '#060a12',
+              900: '#0a101d',
+              850: '#0d1527',
+              800: '#111b30',
+              750: '#15223c',
+              700: '#1e293b'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom styles for refined glow and backdrop effects -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #070d18;
+      color: #94a3b8;
+      overflow-x: hidden;
+    }
+
+    /* Glass card backdrop and subtle borders */
+    .glass-card {
+      background: rgba(13, 21, 39, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    /* Hero section background styling */
+    .hero-bg {
+      background: radial-gradient(circle at 75% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 60%),
+                  radial-gradient(circle at 20% 80%, rgba(30, 58, 138, 0.25) 0%, transparent 50%),
+                  linear-gradient(to bottom, rgba(7, 13, 24, 0.4) 0%, rgba(7, 13, 24, 0.95) 85%, #070d18 100%),
+                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80') center center / cover no-repeat;
+    }
+
+    /* Skyline banner background */
+    .skyline-bg {
+      background: linear-gradient(to bottom, rgba(7, 13, 24, 0.9), rgba(7, 13, 24, 0.8)),
+                  url('https://images.unsplash.com/photo-1517935703635-2717090c2226?auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;
+    }
+
+    /* Glow utilities */
+    .glow-cyan {
+      box-shadow: 0 0 30px -5px rgba(14, 165, 233, 0.35);
+    }
+
+    /* Smooth custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070d18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-[#070d18] text-slate-300 antialiased selection:bg-sky-500 selection:text-white">
 
-  <!-- ===================== PRELOADER ===================== -->
-  <div id="preloader">
-    <div class="preloader-logo">HighSight Studio</div>
-  </div>
+  <!-- ===================== MAIN HEADER / NAVIGATION ===================== -->
+  <header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#070d18]/85 border-b border-slate-800/70 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a class="flex flex-col group cursor-pointer select-none" href="#home" aria-label="Highsight Concept Home">
+        <span class="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-sky-400 transition-colors">
+          Highsight <span class="text-sky-500">Concept</span>
+        </span>
+        <span class="text-[10px] tracking-widest text-sky-400 font-semibold uppercase -mt-0.5">
+          FULL STACK DEVELOPER
+        </span>
+      </a>
 
-  <!-- ===================== NAVIGATION ===================== -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#" class="nav-logo"><span>HighSight</span> Studio</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Resume</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#collaborators">Collaborators</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium">
+        <a class="nav-link text-white hover:text-sky-400 transition-colors py-1" href="#home">Home</a>
+        <a class="nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#about">About</a>
+        <a class="nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#services">Services</a>
+        <a class="nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#skills">Tech Stack</a>
+        <a class="nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#projects">Projects</a>
+        <a class="nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#contact">Contact</a>
+        <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/80 hover:bg-slate-700 border border-slate-700/60 text-xs font-semibold text-rose-300 hover:text-white transition-all shadow-sm" href="media/">
+          <span>📸 Media Studio</span>
+        </a>
+      </nav>
+
+      <!-- Action Button & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold transition-all shadow-lg shadow-sky-500/25 active:scale-95" href="#contact">
+          Hire Me
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden w-10 h-10 rounded-lg bg-slate-900 border border-slate-700/60 flex flex-col items-center justify-center gap-1.5 text-slate-300 hover:text-white transition-colors focus:outline-none">
+          <span class="w-5 h-0.5 bg-current transition-all duration-300 origin-center" id="bar1"></span>
+          <span class="w-5 h-0.5 bg-current transition-all duration-300" id="bar2"></span>
+          <span class="w-5 h-0.5 bg-current transition-all duration-300 origin-center" id="bar3"></span>
+        </button>
+      </div>
     </div>
-  </nav>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Crafting Stories<br/>Through the <span class="highlight">Lens</span>
+    <!-- Mobile Dropdown Navigation Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-b border-slate-800 bg-[#0a101d]/95 backdrop-blur-2xl px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-base font-medium">
+        <a class="mobile-nav-link text-white hover:text-sky-400 transition-colors py-1" href="#home">Home</a>
+        <a class="mobile-nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#about">About</a>
+        <a class="mobile-nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#services">Services</a>
+        <a class="mobile-nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#skills">Tech Stack</a>
+        <a class="mobile-nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#projects">Projects</a>
+        <a class="mobile-nav-link text-slate-300 hover:text-sky-400 transition-colors py-1" href="#contact">Contact</a>
+        <a class="mobile-nav-link text-rose-300 hover:text-white transition-colors py-1 flex items-center gap-2" href="media/">
+          <span>📸 HighSight Media Studio &rarr;</span>
+        </a>
+        <div class="pt-3 border-t border-slate-800">
+          <a class="mobile-nav-link flex items-center justify-center w-full py-3 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-semibold text-center shadow-lg shadow-sky-500/20" href="#contact">
+            Hire Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero-bg relative min-h-[640px] lg:min-h-[760px] pt-12 pb-24 flex items-center" id="home">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Introduction & CTA -->
+      <div class="lg:col-span-7 flex flex-col justify-center z-10">
+        <!-- Sub-badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 w-fit mb-4">
+          <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+          <span class="text-sky-400 text-xs md:text-sm font-semibold tracking-wide uppercase">
+            Available for New Projects
+          </span>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
+          Timilehin Timothy<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-300 to-blue-200">
+            Full Stack Developer
+          </span>
         </h1>
-        <p class="hero-description">
-          I'm <strong>Oyewole Timileyin Timothy</strong>, the creative force behind HighSight Studio.
-          A versatile professional with over 8 years of experience delivering high-quality photography,
-          video production, and visual content.
-        </p>
-        <div class="hero-cta">
-          <a href="#portfolio" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-outline">Let's Talk</a>
-        </div>
-      </div>
 
-      <div class="hero-image-wrapper">
-        <div class="hero-image-frame">
-          <!-- REPLACE: Swap profile.jpg with your actual headshot -->
-          <img src="profile.jpg" alt="Timileyin Uyewoli — HighSight Studio" />
-        </div>
-        <div class="hero-badge badge-top">
-          <span class="badge-icon">📸</span> Photographer & Editor
-        </div>
-        <div class="hero-badge badge-bottom">
-          <span class="badge-icon">⭐</span> 8+ Years Experience
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== STATS BAR ===================== -->
-  <section class="stats-bar reveal">
-    <div class="container">
-      <div class="stat-item">
-        <div class="stat-number">8+</div>
-        <div class="stat-label">Years of Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">Satisfied Clients</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">3000+</div>
-        <div class="stat-label">Successful Rides</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Core Creative Tools</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== ABOUT ===================== -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-image-col reveal">
-        <div class="about-image-main">
-          <!-- REPLACE: You can use a different image here or keep same -->
-          <img src="about.jpeg" alt="Timileyin Uyewoli at work" />
-        </div>
-        <div class="about-accent-box">
-          <div class="accent-number">8+</div>
-          <div class="accent-text">Years Experience</div>
-        </div>
-      </div>
-
-      <div class="about-content reveal">
-        <span class="section-label">About Me</span>
-        <h2 class="section-title">Creative & Versatile<br/>Professional</h2>
-        <p>
-          I am a creative and versatile professional with over 8 years of experience in 
-          photography, media production, customer service, and agribusiness support. 
-          I am highly skilled at managing clients, delivering high-quality visual content, 
-          and providing exceptional service in fast-paced industries.
-        </p>
-        <p>
-          I hold a B.Sc. in Statistics from the Federal University of Agriculture, Abeokuta.
-          My diverse background — from editing high-quality photos and short films, 
-          to customer-facing roles where I completed over 3,000 successful rides as a driver 
-          — has taught me multitasking, problem-solving, and adapting to diverse environments.
-        </p>
-        <p>
-          Currently, as a Freelance Photographer and Picture Editor, I have provided 
-          photography and editing services for weddings, corporate events, and fashion brands 
-          with over 100 satisfied clients.
+        <!-- Short Bio -->
+        <p class="text-slate-300 text-base md:text-lg max-w-xl leading-relaxed mb-8">
+          I build exceptional digital experiences for businesses around the world. Turning ideas and complex requirements into clean, scalable, and responsive web applications.
         </p>
 
-        <div class="tools-grid">
-          <div class="tool-tag"><span class="tool-dot"></span> Adobe Photoshop</div>
-          <div class="tool-tag"><span class="tool-dot"></span> Lightroom</div>
-          <div class="tool-tag"><span class="tool-dot"></span> Premiere Pro</div>
-          <div class="tool-tag"><span class="tool-dot"></span> Client Management</div>
-          <div class="tool-tag"><span class="tool-dot"></span> Problem-Solving</div>
-          <div class="tool-tag"><span class="tool-dot"></span> MS Office</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== EXPERIENCE (CV) ===================== -->
-  <section class="experience" id="experience" style="padding: 5rem 0; background-color: var(--bg-alt);">
-    <div class="container">
-      <div class="reveal" style="text-align:center; margin-bottom: 3rem;">
-        <span class="section-label">My Resume</span>
-        <h2 class="section-title">Professional Experience</h2>
-      </div>
-      <div class="timeline reveal" style="display: flex; flex-direction: column; gap: 2rem; max-width: 800px; margin: 0 auto;">
-        
-        <div class="timeline-item" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-          <h3 style="margin-top: 0; color: #fff;">Freelance Photographer & Picture Editor</h3>
-          <h4 style="color: var(--primary-color); font-weight: 500; margin-bottom: 1rem;">Present</h4>
-          <ul style="color: #ccc; padding-left: 1.5rem; line-height: 1.6;">
-            <li>Provided photography and editing services for weddings, corporate events, and fashion brands with 100+ satisfied clients.</li>
-            <li>Edited high-quality photos and short films using Adobe Photoshop, Lightroom, and Premiere Pro.</li>
-            <li>Official Photographer for Sound City School Tour at Ahmadu Bello University.</li>
-            <li>Collaborated with Valisimo Fashion School and other creative brands to deliver visual content.</li>
-            <li>Produced a personal short film and supported masterclasses in photography/videography.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-          <h3 style="margin-top: 0; color: #fff;">Driver – Uber & Bolt</h3>
-          <h4 style="color: var(--primary-color); font-weight: 500; margin-bottom: 1rem;">Past Experience</h4>
-          <ul style="color: #ccc; padding-left: 1.5rem; line-height: 1.6;">
-            <li>Completed over 3,000 successful rides with a consistent 4.9/5 customer rating.</li>
-            <li>Ensured passenger safety, punctuality, and professional service.</li>
-            <li>Demonstrated strong navigation, time management, and conflict resolution skills.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-          <h3 style="margin-top: 0; color: #fff;">Media Assistant</h3>
-          <h4 style="color: var(--primary-color); font-weight: 500; margin-bottom: 1rem;">HIMAX Media / Videography</h4>
-          <ul style="color: #ccc; padding-left: 1.5rem; line-height: 1.6;">
-            <li>Supported video production and editing projects for clients.</li>
-            <li>Assisted in photography workshops and training sessions.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-          <h3 style="margin-top: 0; color: #fff;">Agricultural Support Staff (Intern)</h3>
-          <h4 style="color: var(--primary-color); font-weight: 500; margin-bottom: 1rem;">Federal University of Agriculture, Abeokuta</h4>
-          <ul style="color: #ccc; padding-left: 1.5rem; line-height: 1.6;">
-            <li>Assisted in crop production, soil preparation, and livestock management as part of academic training.</li>
-            <li>Gained practical knowledge of agriculture, agribusiness operations, and farm management systems.</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== EXPERIENCE (CV) ===================== -->
-  <section class="experience" id="experience" style="padding: 5rem 0; background-color: var(--bg-alt);">
-    <div class="container">
-      <div class="reveal" style="text-align:center; margin-bottom: 3rem;">
-        <span class="section-label">My Resume</span>
-        <h2 class="section-title">Professional Experience</h2>
-      </div>
-      <div class="timeline reveal" style="display: flex; flex-direction: column; gap: 2rem; max-width: 800px; margin: 0 auto;">
-        
-        <div class="timeline-item" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-          <h3 style="margin-top: 0; color: #fff;">Freelance Photographer & Picture Editor</h3>
-          <h4 style="color: var(--primary-color); font-weight: 500; margin-bottom: 1rem;">Present</h4>
-          <ul style="color: #ccc; padding-left: 1.5rem; line-height: 1.6;">
-            <li>Provided photography and editing services for weddings, corporate events, and fashion brands with 100+ satisfied clients.</li>
-            <li>Edited high-quality photos and short films using Adobe Photoshop, Lightroom, and Premiere Pro.</li>
-            <li>Official Photographer for Sound City School Tour at Ahmadu Bello University.</li>
-            <li>Collaborated with Valisimo Fashion School and other creative brands to deliver visual content.</li>
-            <li>Produced a personal short film and supported masterclasses in photography/videography.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-          <h3 style="margin-top: 0; color: #fff;">Driver – Uber & Bolt</h3>
-          <h4 style="color: var(--primary-color); font-weight: 500; margin-bottom: 1rem;">Past Experience</h4>
-          <ul style="color: #ccc; padding-left: 1.5rem; line-height: 1.6;">
-            <li>Completed over 3,000 successful rides with a consistent 4.9/5 customer rating.</li>
-            <li>Ensured passenger safety, punctuality, and professional service.</li>
-            <li>Demonstrated strong navigation, time management, and conflict resolution skills.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-          <h3 style="margin-top: 0; color: #fff;">Media Assistant</h3>
-          <h4 style="color: var(--primary-color); font-weight: 500; margin-bottom: 1rem;">HIMAX Media / Videography</h4>
-          <ul style="color: #ccc; padding-left: 1.5rem; line-height: 1.6;">
-            <li>Supported video production and editing projects for clients.</li>
-            <li>Assisted in photography workshops and training sessions.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-          <h3 style="margin-top: 0; color: #fff;">Agricultural Support Staff (Intern)</h3>
-          <h4 style="color: var(--primary-color); font-weight: 500; margin-bottom: 1rem;">Federal University of Agriculture, Abeokuta</h4>
-          <ul style="color: #ccc; padding-left: 1.5rem; line-height: 1.6;">
-            <li>Assisted in crop production, soil preparation, and livestock management as part of academic training.</li>
-            <li>Gained practical knowledge of agriculture, agribusiness operations, and farm management systems.</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SERVICES ===================== -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="reveal" style="text-align:center;">
-        <span class="section-label">What I Do</span>
-        <h2 class="section-title">Services</h2>
-        <p class="section-subtitle" style="margin-inline:auto;">
-          From concept to final cut — I deliver end-to-end visual production
-          that tells your story with impact.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-icon">🎥</div>
-          <h3>Video Production</h3>
-          <p>Full-scale video production from pre-production planning to on-set direction and post-production delivery.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">✂️</div>
-          <h3>Video Editing</h3>
-          <p>Expert editing in Premiere Pro, DaVinci Resolve, and more — crafting seamless narratives with precision cuts and color grading.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">📸</div>
-          <h3>Photography</h3>
-          <p>Portrait, editorial, and event photography with a cinematic touch that captures the essence of every moment.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🎨</div>
-          <h3>Color Grading</h3>
-          <p>Cinematic color grading that sets mood, tone, and visual consistency across your entire project.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🎯</div>
-          <h3>Creative Direction</h3>
-          <p>Visual concept development and art direction that aligns your brand vision with compelling storytelling.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🎵</div>
-          <h3>Music Videos</h3>
-          <p>High-energy, visually stunning music video production — from treatment to final delivery.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== PORTFOLIO / VIDEO SHOWCASE ===================== -->
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <div class="portfolio-header reveal">
-        <span class="section-label">My Work</span>
-        <h2 class="section-title">Video Portfolio</h2>
-        <p class="section-subtitle">
-          A curated collection of projects that showcase my range — from
-          cinematic narratives to dynamic brand content.
-        </p>
-      </div>
-
-      <div class="video-grid">
-
-        <!-- VIDEO 1 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/10VboNT-iRyQRGLh20heLJSdz5R4mtp5O/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 2 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1Z9eStX1NYUPDYEhaG2cutdyVM0TduAfc/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 3 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1V4iGQ11a_5zhA602yKoiRPvplyo6Kdtm/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 4 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1vf76Fnx_dd8ljcBBN3juSwubl6wdwYp4/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 5 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1pT-9D0Cv_cCXrHH6ZFx04aeoQRonOPCS/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 6 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1sba-IOuzrWh0nYHegga_SF856uCKctcG/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 7 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1m5NhT9hSWuOjV6qRkcOHrACiZpDdxuqc/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 8 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/16Ih9mZqZ-gW_-lBmteYEgLA0JFH3-sXb/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 9 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1G9fMms0QREXYkfUZA5L9NqIOCumoxRvy/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 10 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1TMaeyyXhrJIyscRnbpRieZCdYZYM0Qyd/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 11 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/18TAKZROznqeSPyYV8aOxQ86Tb49KY3EJ/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 12 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1bYqMuHxJjgvzCUA3VLMXivG54At19MrY/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 13 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1rjnybbXnnnDT17kx8QYyiV7vVhsuDKuq/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 14 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1mQB_mTanhI9o1FiftosMWHR2xqvlVHgG/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 15 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1hXqeljtXR5p7dAcJQCbLga93RR-dxhwm/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 16 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1FKUWK9QwtdTWfZ41Wn7Kiijwa7XZHzer/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 17 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1hJLqV86rsnOJVdmRIizX6W4EZyCjiqej/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 18 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1E24t7NGCRH9OgYix8uPfmw1-J1YrdiIB/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 19 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1pboOwVjqmTMlFbMuqHNOHAXBnZPMizF1/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 20 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1VZ2bO4LnV4NqS5ytrFsYURj4g9TmliEu/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 21 -->
-        <div class="video-card reveal">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1L5lWX-vg6-PlLpMzK7570Ae1l3a9mG2U/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== COLLABORATORS ===================== -->
-  <section class="collaborators" id="collaborators">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Collaborators</span>
-        <h2 class="section-title">People I've Worked With</h2>
-        <p class="section-subtitle" style="margin-inline:auto;">
-          I've had the privilege of creating visual stories alongside some of
-          the most talented creatives and personalities in the industry.
-        </p>
-      </div>
-
-      <div class="collab-grid reveal">
-        <div class="collab-item">
-          Sound City
-          <span class="collab-role">School Tour (ABU)</span>
-        </div>
-        <div class="collab-item">
-          Valisimo Fashion
-          <span class="collab-role">Fashion School</span>
-        </div>
-        <div class="collab-item">
-          HIMAX Media
-          <span class="collab-role">Production</span>
-        </div>
-        <div class="collab-item">
-          Uber & Bolt
-          <span class="collab-role">3000+ Rides</span>
-        </div>
-        <div class="collab-item">
-          & Many More
-          <span class="collab-role">100+ Satisfied Clients</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CONTACT ===================== -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Get in Touch</span>
-        <h2 class="section-title">Let's Create Together</h2>
-        <p class="section-subtitle" style="margin-inline:auto;">
-          Got a project in mind? Let's bring your vision to life.
-          Reach out and let's start a conversation.
-        </p>
-      </div>
-
-      <div class="contact-card reveal">
-        <div class="contact-links">
-          <a href="mailto:oyewoletimilehintimothy@gmail.com" class="contact-link">
-            <span class="link-icon">✉️</span> oyewoletimilehintimothy@gmail.com
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 mb-14">
+          <a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm md:text-base transition-all shadow-lg shadow-sky-500/25 group active:scale-95" href="#projects">
+            <span>View My Work</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
           </a>
-          <a href="tel:+2347038667100" class="contact-link">
-            <span class="link-icon">📱</span> +2347038667100
+          <a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold text-sm md:text-base transition-all backdrop-blur-sm active:scale-95" href="#contact">
+            <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+            <span>Contact Me</span>
           </a>
-          <!-- REPLACE: Update with your actual Instagram -->
-          <a href="https://instagram.com/highsight_studio" target="_blank" rel="noopener" class="contact-link">
-            <span class="link-icon">📷</span> @highsight_studio
+        </div>
+
+        <!-- Trust Badges & Tech Proof -->
+        <div class="pt-6 border-t border-slate-800/80 max-w-lg">
+          <p class="text-xs text-slate-400 font-semibold tracking-wider uppercase mb-4">
+            Trusted by Modern Businesses & Tech
+          </p>
+          <div class="flex flex-wrap items-center gap-6 md:gap-8 opacity-80 filter grayscale hover:grayscale-0 transition-all duration-300">
+            <!-- Shopify -->
+            <span class="flex items-center gap-1.5 text-slate-200 font-bold tracking-tight text-base">
+              <span class="text-emerald-500 text-lg">🛍</span> Shopify
+            </span>
+            <!-- Google -->
+            <span class="flex items-center gap-1 text-slate-200 font-bold tracking-tight text-base">
+              <span class="text-blue-500">G</span><span class="text-rose-500">o</span><span class="text-amber-400">o</span><span class="text-blue-500">g</span><span class="text-emerald-500">l</span><span class="text-rose-500">e</span>
+            </span>
+            <!-- Airbnb -->
+            <span class="flex items-center gap-1.5 text-slate-200 font-bold tracking-tight text-base">
+              <span class="text-rose-500 text-lg">●</span> Airbnb
+            </span>
+            <!-- Microsoft -->
+            <span class="flex items-center gap-2 text-slate-200 font-bold tracking-tight text-base">
+              <div class="grid grid-cols-2 gap-0.5 w-3.5 h-3.5">
+                <span class="bg-rose-500"></span><span class="bg-emerald-500"></span>
+                <span class="bg-blue-500"></span><span class="bg-amber-400"></span>
+              </div>
+              Microsoft
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Developer Cutout Portrait -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+        <div class="relative w-full max-w-[380px] lg:max-w-[430px] aspect-[4/5] rounded-3xl overflow-hidden group glass-card p-2">
+          <!-- Spotlight background behind portrait -->
+          <div class="absolute inset-0 bg-gradient-to-t from-sky-500/20 via-transparent to-transparent opacity-80 pointer-events-none"></div>
+          
+          <img 
+            alt="Timilehin Timothy - Full Stack Developer" 
+            class="w-full h-full object-cover object-top rounded-2xl scale-100 group-hover:scale-105 transition-transform duration-500" 
+            src="hero-developer.jpg"
+            onerror="this.onerror=null; this.src='profile.jpg';" 
+          />
+
+          <!-- Floating Badge Bottom -->
+          <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-700/60 flex items-center justify-between shadow-xl">
+            <div class="flex items-center gap-2.5">
+              <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-xs font-semibold text-white">Full Stack Engineer</span>
+            </div>
+            <span class="text-[11px] font-mono text-sky-400 font-bold">8+ Yrs Exp</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ME SECTION ===================== -->
+  <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto" id="about">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left Column: Biography & Stats -->
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">
+            ABOUT ME
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1.5">
+            Building Solutions That<br />Make a Real Impact
+          </h2>
+        </div>
+
+        <p class="text-slate-400 leading-relaxed text-sm md:text-base">
+          I'm a passionate Full Stack Developer and digital creator behind Highsight Concept. With over 8 years of combined technical and creative experience, I specialize in building fast, scalable, and responsive web applications using modern web technologies. Combining a keen eye for visual aesthetics with clean architecture, I transform ideas into seamless digital realities for businesses and founders worldwide.
+        </p>
+
+        <!-- Skill & Experience Badges Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="flex items-center space-x-3 text-slate-200 text-sm p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <svg class="w-5 h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+            <span class="font-medium">8+ Years Creative & Tech</span>
+          </div>
+          <div class="flex items-center space-x-3 text-slate-200 text-sm p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <svg class="w-5 h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+            <span class="font-medium">Available for Freelance & Teams</span>
+          </div>
+          <div class="flex items-center space-x-3 text-slate-200 text-sm p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <svg class="w-5 h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+            <span class="font-medium">50+ Completed Projects</span>
+          </div>
+          <div class="flex items-center space-x-3 text-slate-200 text-sm p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <svg class="w-5 h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+            <span class="font-medium">Worldwide Client Base</span>
+          </div>
+        </div>
+
+        <!-- Download CV / Contact CTA -->
+        <div class="pt-4 flex flex-wrap items-center gap-4">
+          <a class="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm transition-all shadow-md shadow-sky-500/20 active:scale-95" href="#contact">
+            <span>Get in Touch</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
           </a>
-          <!-- REPLACE: Update with your actual YouTube channel -->
-          <a href="https://youtube.com/@highsightstudio" target="_blank" rel="noopener" class="contact-link">
-            <span class="link-icon">🎬</span> YouTube Channel
+          <a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-slate-900 border border-slate-700/60 hover:border-sky-500/50 text-slate-200 font-semibold text-sm transition-all active:scale-95" href="https://github.com/bosstimmy" target="_blank" rel="noopener noreferrer">
+            <svg class="w-4 h-4 fill-current text-sky-400" viewBox="0 0 24 24">
+              <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+            </svg>
+            <span>GitHub Profile</span>
           </a>
         </div>
       </div>
+
+      <!-- Right Column: Quick Contact Info Card -->
+      <div class="lg:col-span-5">
+        <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+          <!-- Location item -->
+          <div class="flex items-start space-x-4">
+            <div class="p-2.5 rounded-lg bg-sky-500/10 text-sky-400 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Location</h4>
+              <p class="text-white font-medium text-sm mt-0.5">Lagos, Nigeria • Remote Worldwide</p>
+            </div>
+          </div>
+
+          <!-- Email item -->
+          <div class="flex items-start space-x-4">
+            <div class="p-2.5 rounded-lg bg-sky-500/10 text-sky-400 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Email</h4>
+              <a href="mailto:oyewoletimilehintimothy@gmail.com" class="text-white hover:text-sky-400 font-medium text-sm mt-0.5 block transition-colors break-all">
+                oyewoletimilehintimothy@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Phone item -->
+          <div class="flex items-start space-x-4">
+            <div class="p-2.5 rounded-lg bg-sky-500/10 text-sky-400 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Phone / WhatsApp</h4>
+              <a href="tel:+2347038667100" class="text-white hover:text-sky-400 font-medium text-sm mt-0.5 block transition-colors">
+                +234 703 866 7100
+              </a>
+            </div>
+          </div>
+
+          <!-- Languages item -->
+          <div class="flex items-start space-x-4">
+            <div class="p-2.5 rounded-lg bg-sky-500/10 text-sky-400 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Languages</h4>
+              <p class="text-white font-medium text-sm mt-0.5">English, Yoruba</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 <span class="footer-brand">HighSight Studio</span>. All rights reserved.</p>
+  <!-- ===================== SERVICES SECTION ===================== -->
+  <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto" id="services">
+    <!-- Section Title -->
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">
+        MY SERVICES
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2">
+        What I Can Do For You
+      </h2>
+      <div class="w-12 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- Services Grid (4 Cards) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1: Web Development -->
+      <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 group">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 mb-5 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+          Web Development
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Custom web applications, responsive websites, and robust full-stack architectures built with React, Next.js, and Node.js.
+        </p>
+      </div>
+
+      <!-- Card 2: Responsive UI/UX -->
+      <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 group">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 mb-5 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+          Responsive Design
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Mobile-first, highly accessible layouts engineered to provide a seamless visual experience across all screen sizes.
+        </p>
+      </div>
+
+      <!-- Card 3: Performance Optimization -->
+      <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 group">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 mb-5 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+          Performance Optimization
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Lightning-fast page load times, SEO-ready codebases, Core Web Vitals optimization, and clean asset pipelines.
+        </p>
+      </div>
+
+      <!-- Card 4: Support & Maintenance -->
+      <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 group">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 mb-5 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+          Website Maintenance
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Ongoing technical support, database maintenance, security patches, and feature updates to keep your business operating smoothly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TECH STACK & TOOLS ===================== -->
+  <section class="py-16 px-6 lg:px-12 max-w-7xl mx-auto border-t border-slate-800/60" id="skills">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">
+        CORE TECH STACK
+      </span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1">
+        Technologies & Frameworks
+      </h2>
+    </div>
+
+    <!-- Tech Badges -->
+    <div class="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        ⚛️ React.js
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        ▲ Next.js
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        🔷 TypeScript
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        💨 Tailwind CSS
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        🟢 Node.js & Express
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        🐍 Python
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        🐘 PostgreSQL & MySQL
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        🍃 MongoDB
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        🔥 Firebase & Supabase
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        📦 RESTful APIs & GraphQL
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        🐙 Git & GitHub
+      </span>
+      <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm font-semibold hover:border-sky-500/50 hover:text-white transition-colors">
+        🎨 Figma / Photoshop / Premiere Pro
+      </span>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED PROJECTS SECTION ===================== -->
+  <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto border-t border-slate-800/60" id="projects">
+    <!-- Header with title and view all link -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">
+          FEATURED PROJECTS
+        </span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">
+          Recent Works
+        </h2>
+      </div>
+      <a class="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-400 hover:text-sky-300 mt-3 sm:mt-0 transition-colors group" href="https://github.com/bosstimmy" target="_blank" rel="noopener noreferrer">
+        <span>View All on GitHub</span>
+        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Projects Grid (3 cards) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Project 1: E-Commerce Platform -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
+        <!-- Mockup container -->
+        <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
+          <!-- Reconstructed mockup UI -->
+          <div class="w-full h-full p-4 bg-gradient-to-br from-[#0c1424] to-[#162544] flex flex-col justify-between">
+            <div class="flex items-center justify-between border-b border-slate-700/50 pb-2">
+              <span class="text-[11px] font-bold text-white tracking-wide">STOREFRONT</span>
+              <div class="flex space-x-1">
+                <span class="w-2 h-2 rounded-full bg-rose-500/80"></span>
+                <span class="w-2 h-2 rounded-full bg-amber-500/80"></span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span>
+              </div>
+            </div>
+            <div class="my-auto text-left">
+              <p class="text-xs uppercase tracking-widest text-sky-400 font-semibold">Elevate Your</p>
+              <h4 class="text-base font-extrabold text-white">Online Store</h4>
+              <button class="mt-3 px-3 py-1 bg-sky-500 text-[10px] text-white font-medium rounded shadow">Shop Now</button>
+            </div>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="h-6 bg-slate-800/80 rounded border border-slate-700/40"></div>
+              <div class="h-6 bg-slate-800/80 rounded border border-slate-700/40"></div>
+              <div class="h-6 bg-slate-800/80 rounded border border-slate-700/40"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Project details -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+              E-Commerce Platform
+            </h3>
+            <p class="text-xs text-sky-400 font-semibold mt-1">
+              Shopify / React / Node.js
+            </p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Full-featured headless store featuring dynamic cart states, payment gateways, and custom inventory synchronization.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="#contact" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1">
+              <span>Request Demo</span> →
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">Live Demo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Real Estate Website -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
+        <!-- Mockup container -->
+        <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
+          <!-- Reconstructed mockup UI -->
+          <div class="w-full h-full p-4 bg-gradient-to-br from-[#121c2e] to-[#0f172a] flex flex-col justify-between">
+            <div class="flex items-center justify-between border-b border-slate-700/50 pb-2">
+              <span class="text-[11px] font-bold text-white tracking-wide">ESTATE FINDER</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-400 font-semibold">Search</span>
+            </div>
+            <div class="my-auto text-left">
+              <h4 class="text-sm font-extrabold text-white">Find Your Dream Property</h4>
+              <p class="text-[10px] text-slate-300">Modern Residential & Commercial</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="h-8 flex-1 bg-slate-800/80 rounded border border-slate-700/50 flex items-center px-2 text-[10px] text-slate-400">Search location...</div>
+              <div class="h-8 w-8 bg-sky-500 rounded flex items-center justify-center text-white text-xs">🔍</div>
+            </div>
+          </div>
+        </div>
+        <!-- Project details -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+              Real Estate Portal
+            </h3>
+            <p class="text-xs text-sky-400 font-semibold mt-1">
+              Next.js / Tailwind CSS / PostgreSQL
+            </p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Property discovery platform featuring interactive location filtering, booking schedules, and agent contact workflows.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="#contact" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1">
+              <span>Request Demo</span> →
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">Case Study</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Business Analytics Dashboard -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 flex flex-col group hover:-translate-y-1.5">
+        <!-- Mockup container -->
+        <div class="relative bg-slate-900 aspect-[16/10] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
+          <!-- Reconstructed mockup UI -->
+          <div class="w-full h-full p-3.5 bg-slate-900 flex space-x-2.5">
+            <!-- Sidebar -->
+            <div class="w-12 bg-slate-950/70 rounded p-1.5 flex flex-col space-y-2 border border-slate-800">
+              <div class="w-4 h-4 rounded bg-sky-500 mx-auto"></div>
+              <div class="w-full h-1 bg-slate-800 rounded"></div>
+              <div class="w-full h-1 bg-slate-800 rounded"></div>
+              <div class="w-full h-1 bg-slate-800 rounded"></div>
+            </div>
+            <!-- Main dashboard content -->
+            <div class="flex-1 flex flex-col justify-between bg-slate-800/40 rounded p-2 border border-slate-800/60">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-bold text-white">Analytics Overview</span>
+                <span class="w-4 h-4 rounded-full bg-sky-500 flex items-center justify-center text-[8px] text-white">~</span>
+              </div>
+              <!-- Bar chart placeholder -->
+              <div class="flex items-end space-x-1.5 h-14 pt-2">
+                <div class="w-2.5 h-6 bg-sky-400 rounded-t"></div>
+                <div class="w-2.5 h-10 bg-sky-500 rounded-t"></div>
+                <div class="w-2.5 h-4 bg-sky-600 rounded-t"></div>
+                <div class="w-2.5 h-9 bg-emerald-400 rounded-t"></div>
+                <div class="w-2.5 h-12 bg-sky-400 rounded-t"></div>
+                <div class="w-2.5 h-7 bg-indigo-400 rounded-t"></div>
+              </div>
+              <!-- Mini stats -->
+              <div class="grid grid-cols-2 gap-1 pt-1 text-[8px] text-slate-300">
+                <div class="bg-slate-900/60 p-1 rounded font-medium text-emerald-400">+24.5% Growth</div>
+                <div class="bg-slate-900/60 p-1 rounded font-medium">1.2k Active</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project details -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+              Business Dashboard
+            </h3>
+            <p class="text-xs text-sky-400 font-semibold mt-1">
+              Vue.js / Laravel / MySQL
+            </p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              High-throughput data visualization dashboard with live revenue metrics, transaction logs, and customer telemetry.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="#contact" class="text-xs font-semibold text-white hover:text-sky-400 inline-flex items-center gap-1">
+              <span>Request Demo</span> →
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">Enterprise</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SKYLINE CTA BANNER ===================== -->
+  <section class="skyline-bg relative py-20 px-6 lg:px-12 border-t border-slate-800/80">
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+        Let's Work Together
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+        Have a project, freelance contract, or full-stack engineering role in mind?<br class="hidden sm:inline" />
+        Let's build something exceptional together.
+      </p>
+      <a class="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm transition-all shadow-lg shadow-sky-500/30 group active:scale-95" href="mailto:oyewoletimilehintimothy@gmail.com">
+        <span>Get In Touch Directly</span>
+        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT SECTION ===================== -->
+  <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto" id="contact">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left Column: Details & Direct Links -->
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">
+            CONTACT ME
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">
+            Let's Talk About Your Next Project
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+          Whether you need a custom web application from scratch, a redesign, or technical pair programming, I'm just a message away.
+        </p>
+
+        <!-- Direct Contact Cards -->
+        <div class="space-y-3 pt-2">
+          <a href="mailto:oyewoletimilehintimothy@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition-colors group">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+              ✉️
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 block font-medium">Direct Email</span>
+              <span class="text-sm font-semibold text-white group-hover:text-sky-400 transition-colors break-all">oyewoletimilehintimothy@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="tel:+2347038667100" class="flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition-colors group">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+              📱
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 block font-medium">Phone & WhatsApp</span>
+              <span class="text-sm font-semibold text-white group-hover:text-sky-400 transition-colors">+234 703 866 7100</span>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/highsight_studio" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition-colors group">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+              📷
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 block font-medium">Creative Studio Instagram</span>
+              <span class="text-sm font-semibold text-white group-hover:text-sky-400 transition-colors">@highsight_studio</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Contact Form -->
+      <div class="lg:col-span-7">
+        <div class="glass-card rounded-2xl p-6 sm:p-10 border border-slate-800 shadow-xl">
+          <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+          <p class="text-xs text-slate-400 mb-6">Fill in the form below and I'll get back to you within 24 hours.</p>
+
+          <form id="contactForm" class="space-y-4" onsubmit="handleContactSubmit(event)">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Your Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  placeholder="e.g. Alex Johnson"
+                  class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700/60 text-white text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Your Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  placeholder="alex@example.com"
+                  class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700/60 text-white text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Project Type</label>
+              <select 
+                id="subject" 
+                name="subject" 
+                class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700/60 text-white text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors"
+              >
+                <option value="Full Stack Web App">Full Stack Web Application</option>
+                <option value="Frontend Development">Frontend Development (React / Next.js)</option>
+                <option value="Website Redesign & Performance">Website Redesign & Performance</option>
+                <option value="Freelance Consultation">Freelance Project / Contract</option>
+                <option value="Other">Other Collaboration</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                required 
+                placeholder="Tell me about your goals, timeline, and requirements..."
+                class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700/60 text-white text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full py-3.5 px-6 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm transition-all shadow-lg shadow-sky-500/25 active:scale-95 flex items-center justify-center gap-2"
+            >
+              <span>Send Message</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </button>
+
+            <!-- Status message placeholder -->
+            <div id="formStatus" class="hidden text-center text-xs py-2 rounded-lg font-medium"></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== MAIN FOOTER ===================== -->
+  <footer class="bg-[#050912] border-t border-slate-800/80 py-10 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand Name -->
+      <div class="text-center md:text-left">
+        <a href="#home" class="text-lg font-bold text-white tracking-tight hover:text-sky-400 transition-colors">
+          Highsight <span class="text-sky-500">Concept</span>
+        </a>
+        <p class="text-xs text-slate-400 mt-0.5">Timilehin Timothy — Full Stack Developer</p>
+        <p class="text-xs text-slate-500 mt-1.5">
+          Looking for Photography &amp; Video Production? <a href="media/" class="text-rose-400 hover:text-rose-300 font-semibold underline">Visit HighSight Studio &rarr;</a>
+        </p>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-xs text-slate-400 text-center">
+        &copy; 2026 Highsight Concept. All rights reserved.
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="flex items-center space-x-3">
+        <!-- GitHub -->
+        <a aria-label="GitHub Profile" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-sky-500 transition-colors" href="https://github.com/bosstimmy" target="_blank" rel="noopener noreferrer">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a aria-label="Instagram Profile" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-sky-500 transition-colors" href="https://instagram.com/highsight_studio" target="_blank" rel="noopener noreferrer">
+          <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+          </svg>
+        </a>
+
+        <!-- YouTube -->
+        <a aria-label="YouTube Channel" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-sky-500 transition-colors" href="https://youtube.com/@highsightstudio" target="_blank" rel="noopener noreferrer">
+          <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
   <!-- ===================== JAVASCRIPT ===================== -->
   <script>
-    /* ------ Preloader ------ */
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('preloader').classList.add('hidden');
-      }, 800);
-    });
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
 
-    /* ------ Navbar scroll effect ------ */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    /* ------ Mobile menu toggle ------ */
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    /* ------ Scroll-reveal fallback (IntersectionObserver) ------ */
-    if (!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
-      const revealEls = document.querySelectorAll('.reveal');
-      revealEls.forEach(el => el.classList.add('reveal-fallback'));
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      revealEls.forEach(el => revealObserver.observe(el));
-    }
-
-    /* ------ YouTube embed engine ------
-       Reads data-youtube="VIDEO_ID" from each .video-card
-       and replaces the placeholder with a lazy-loaded iframe.
-    */
-    function initYouTubeEmbeds() {
-      document.querySelectorAll('.video-card[data-youtube]').forEach(card => {
-        const videoId = card.getAttribute('data-youtube').trim();
-        if (!videoId) return; // keep placeholder if empty
-
-        const wrapper = card.querySelector('.video-wrapper');
-        const placeholder = wrapper.querySelector('.video-placeholder');
-        if (placeholder) placeholder.remove();
-
-        // Create thumbnail with play-on-click (lazy load)
-        const thumb = document.createElement('div');
-        thumb.className = 'video-placeholder';
-        thumb.style.cursor = 'pointer';
-        thumb.style.backgroundImage = `url(https://img.youtube.com/vi/${videoId}/hqdefault.jpg)`;
-        thumb.style.backgroundSize = 'cover';
-        thumb.style.backgroundPosition = 'center';
-        thumb.innerHTML = '<span class="placeholder-icon" style="opacity:0.9;font-size:3rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6);">▶</span>';
-
-        thumb.addEventListener('click', () => {
-          const iframe = document.createElement('iframe');
-          iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
-          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-          iframe.allowFullscreen = true;
-          iframe.loading = 'lazy';
-          thumb.remove();
-          wrapper.appendChild(iframe);
-        });
-
-        wrapper.appendChild(thumb);
-      });
-    }
-    initYouTubeEmbeds();
-
-    /* ------ Portfolio filter ------ */
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const videoCards = document.querySelectorAll('.video-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-filter');
-        videoCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    /* ------ Stat counter animation ------ */
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const nums = entry.target.querySelectorAll('.stat-number');
-          nums.forEach(num => {
-            const text = num.textContent;
-            const value = parseInt(text);
-            const suffix = text.replace(/[0-9]/g, '');
-            let current = 0;
-            const step = Math.ceil(value / 40);
-            const counter = setInterval(() => {
-              current += step;
-              if (current >= value) {
-                current = value;
-                clearInterval(counter);
-              }
-              num.textContent = current + suffix;
-            }, 30);
-          });
-          statObserver.unobserve(entry.target);
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        if (isOpen) {
+          mobileMenu.classList.add('hidden');
+          bar1.classList.remove('rotate-45', 'translate-y-2');
+          bar2.classList.remove('opacity-0');
+          bar3.classList.remove('-rotate-45', '-translate-y-2');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          bar1.classList.add('rotate-45', 'translate-y-2');
+          bar2.classList.add('opacity-0');
+          bar3.classList.add('-rotate-45', '-translate-y-2');
         }
       });
-    }, { threshold: 0.3 });
 
-    const statsSection = document.querySelector('.stats-bar');
-    if (statsSection) statObserver.observe(statsSection);
+      // Close mobile menu when link is clicked
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          bar1.classList.remove('rotate-45', 'translate-y-2');
+          bar2.classList.remove('opacity-0');
+          bar3.classList.remove('-rotate-45', '-translate-y-2');
+        });
+      });
+    }
+
+    // Header scroll background elevation
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        header.classList.add('shadow-xl', 'bg-[#070d18]/95');
+      } else {
+        header.classList.remove('shadow-xl');
+      }
+    });
+
+    // Contact form handling with mailto fallback
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const name = form.name.value;
+      const email = form.email.value;
+      const subject = form.subject.value;
+      const message = form.message.value;
+      const statusEl = document.getElementById('formStatus');
+
+      // Compose mailto
+      const mailtoUrl = `mailto:oyewoletimilehintimothy@gmail.com?subject=${encodeURIComponent(subject + ' - ' + name)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+
+      statusEl.classList.remove('hidden', 'bg-red-500/20', 'text-red-300');
+      statusEl.classList.add('bg-emerald-500/20', 'text-emerald-300');
+      statusEl.textContent = 'Opening your email client to send message...';
+
+      window.location.href = mailtoUrl;
+
+      setTimeout(() => {
+        statusEl.textContent = 'Thank you! If your email client did not open, please write to oyewoletimilehintimothy@gmail.com directly.';
+      }, 2500);
+    }
   </script>
-
 </body>
 </html>
